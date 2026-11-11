@@ -13,8 +13,8 @@ WORKDIR /app
 # Copy dependency manifests first for Docker layer caching
 COPY package.json package-lock.json ./
 
-# Install all dependencies (including Vite & TypeScript build tools)
-RUN npm ci --no-audit --no-fund
+# Install all dependencies (including Vite & TypeScript devDependencies regardless of build-time NODE_ENV)
+RUN NODE_ENV=development npm ci --include=dev --no-audit --no-fund
 
 # Copy full application source
 COPY . .
