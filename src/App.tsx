@@ -7,7 +7,6 @@ import {
   Wallet as WalletIcon,
   Database,
   Search,
-  Bell,
   Sun,
   Moon,
   Plus,
@@ -259,7 +258,6 @@ export default function App() {
   const [cmdPaletteOpen, setCmdPaletteOpen] = useState(false);
   const [dealCloserOpen, setDealCloserOpen] = useState(false);
   const [dealCloserInitialTopic, setDealCloserInitialTopic] = useState('');
-  const [notifOpen, setNotifOpen] = useState(false);
   const [pingingServerId, setPingingServerId] = useState<string | null>(null);
 
   const restoreInputRef = useRef<HTMLInputElement | null>(null);
@@ -1834,39 +1832,6 @@ export default function App() {
                 <Bot size={14} />
                 <span className="hidden sm:inline">Tanya AI / Telegram</span>
               </button>
-
-              {/* Notification Bell */}
-              <div className="relative">
-                <button
-                  onClick={() => setNotifOpen((p) => !p)}
-                  className={`relative rounded-full border p-2 ${
-                    isDark ? 'border-white/10 bg-[#131722]' : 'border-slate-200 bg-white shadow-sm'
-                  }`}
-                >
-                  <Bell size={15} />
-                  <span className="absolute -top-0.5 -right-0.5 h-2.5 w-2.5 rounded-full bg-orange-500" />
-                </button>
-                {notifOpen && (
-                  <div
-                    className={`absolute right-0 mt-2 w-80 rounded-2xl border p-4 shadow-2xl z-50 text-xs ${
-                      isDark ? 'border-white/10 bg-[#131722]' : 'border-slate-200 bg-white'
-                    }`}
-                  >
-                    <div className="font-bold mb-2">Notifikasi Operasional</div>
-                    <div className="space-y-2 text-[11px]">
-                      <div className="rounded-xl bg-orange-500/10 p-2.5 text-orange-400">
-                        {metrics.activeTasksCount} tugas kuliah UNPAM & proyek klien masih aktif.
-                      </div>
-                      <div className="rounded-xl bg-emerald-500/10 p-2.5 text-emerald-400">
-                        Google Workspace ({data?.settings?.google_email || 'daerobii0223@gmail.com'}) terhubung.
-                      </div>
-                      <div className="rounded-xl bg-sky-500/10 p-2.5 text-sky-400">
-                        Pemakaian anggaran bulan ini: {metrics.spendingRatio}% dari limit.
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
 
               {/* Profile Pill */}
               <div

@@ -1069,7 +1069,7 @@ Tulis ringkasannya dalam bentuk poin-poin berbobot (maksimal 4-5 poin) yang lang
           <div className="flex items-center gap-2.5">
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
             <h2 className="text-lg font-bold">
-              Google Workspace Live Connection ({data.settings?.google_email || 'daerobii0223@gmail.com'})
+              Google Workspace Live Connection ({data.settings?.google_email || 'Terhubung'})
             </h2>
           </div>
           <p className="mt-1 text-xs text-slate-400">

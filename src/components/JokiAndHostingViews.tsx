@@ -2409,7 +2409,7 @@ export const HostingAndDomainSection: React.FC<HostingAndDomainSectionProps> = (
                   <input
                     value={accountIdentity}
                     onChange={(e) => setAccountIdentity(e.target.value)}
-                    placeholder="daerobii0223@gmail.com"
+                    placeholder="admin@domain.com"
                     className="w-full rounded-xl border border-slate-800 bg-slate-950 px-3 py-2 text-white"
                   />
                 </div>

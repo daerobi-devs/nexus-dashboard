@@ -553,7 +553,7 @@ export const SmartDocGeneratorView: React.FC<SmartDocGeneratorViewProps> = ({
                 onChange={(e) => setSyncToGDocs(e.target.checked)}
                 className="rounded border-slate-700"
               />
-              <span>Sekaligus ekspor ke Google Docs (`daerobii0223@gmail.com`)</span>
+              <span>Sekaligus ekspor ke Google Docs (Google Workspace)</span>
             </label>
 
             <button

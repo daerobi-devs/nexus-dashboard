@@ -741,7 +741,7 @@ Daerobi (daerobi-devs)`;
     const gmails = state.googleItems.filter((g) => g.kind === 'gmail').slice(0, 4);
     if (drives.length === 0 && gmails.length === 0) {
       return `Saat ini cache Google Workspace di SQLite masih kosong. Klik tombol "Sinkronkan Google Workspace Sekarang" di menu Google Workspace untuk menarik file Drive & email Gmail dari akun ${
-        state.settings.google_email || 'daerobii0223@gmail.com'
+        state.settings.google_email || 'Google Workspace'
       }.`;
     }
     return `Ringkasan Data Google Workspace (${state.settings.google_email || 'daerobi'}):

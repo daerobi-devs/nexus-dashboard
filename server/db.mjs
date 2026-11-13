@@ -253,7 +253,7 @@ export function initDb(customPath) {
       domain_or_service TEXT NOT NULL,
       provider TEXT NOT NULL DEFAULT 'Rumahweb',
       category TEXT NOT NULL DEFAULT 'Domain & Hosting',
-      account_identity TEXT NOT NULL DEFAULT 'daerobii0223@gmail.com',
+      account_identity TEXT NOT NULL DEFAULT 'admin@daerobi-devs.my.id',
       panel_url TEXT NOT NULL DEFAULT 'https://clientzone.rumahweb.com',
       ip_or_dns TEXT NOT NULL DEFAULT 'Cloudflare / Rumahweb DNS',
       client_owner TEXT NOT NULL DEFAULT 'Internal / Klien',
@@ -442,7 +442,7 @@ function seedInitialData(db) {
   insertSetting.run('user_name', 'Daerobi');
   insertSetting.run('user_subtitle', 'Teknik Informatika Sem 5 UNPAM • Fullstack & AI Engineer');
   insertSetting.run('google_account', 'daerobi');
-  insertSetting.run('google_email', 'daerobii0223@gmail.com');
+  insertSetting.run('google_email', process.env.GOOGLE_EMAIL || '');
   insertSetting.run('pin_code', '');
   insertSetting.run('telegram_bot_token', '');
   insertSetting.run('telegram_bot_username', '');
@@ -501,7 +501,7 @@ function seedV2Extensions(db) {
     'ai-welcome',
     'dashboard',
     'assistant',
-    'Halo Daerobi! Gue udah terhubung langsung ke seluruh tabel di database lokal `data/nexus.db` (Dompet, Transaksi, Tugas Kuliah UNPAM, Proyek Klien, Invoice, Maintenance Server, dan Google Workspace `daerobii0223@gmail.com`). Lo bisa tanya analisis data apa pun atau langsung perintah gue buat catat transaksi & tambah tugas dari chat ini maupun lewat Bot Telegram!',
+    'Halo Daerobi! Gue udah terhubung langsung ke seluruh tabel di database lokal `data/nexus.db` (Dompet, Transaksi, Tugas Kuliah UNPAM, Proyek Klien, Invoice, Maintenance Server, dan Google Workspace). Lo bisa tanya analisis data apa pun atau langsung perintah gue buat catat transaksi & tambah tugas dari chat ini maupun lewat Bot Telegram!',
     '2026-11-10 18:00'
   );
 
@@ -683,7 +683,7 @@ function seedJokiAndHosting(db) {
     ['dom-1', 'sinarjayalogistik.co.id', 'Rumahweb', 'Domain .CO.ID & DNS', 'admin@sinarjayalogistik.co.id', 'https://clientzone.rumahweb.com', 'Proxy Cloudflare Tunnel', 'PT Sinar Jaya Logistik', 330000, '2026-11-14', 'Expiring Soon', 'Segera perpanjang domain .co.id di Clientzone Rumahweb sebelum H-3'],
     ['dom-2', 'klinikpratamasehat.id', 'Rumahweb', 'Domain .ID & Cloud Hosting', 'admin@klinikpratamasehat.id', 'https://clientzone.rumahweb.com', 'cPanel Rumahweb / Coolify', 'Klinik Pratama Sehat', 550000, '2027-03-20', 'Active', 'Paket domain + email bisnis klinik di Rumahweb'],
     ['dom-3', 'smkbudimulia.sch.id', 'Rumahweb / PANDI', 'Domain Sekolah .SCH.ID', 'rizky@smkbudimulia.sch.id', 'https://clientzone.rumahweb.com', 'VPS Jakarta 103.xx.xx.xx', 'SMK Budi Mulia', 220000, '2027-01-15', 'Active', 'Diarahkan A Record ke server SIAKAD'],
-    ['dom-4', 'daerobi-devs.my.id', 'Cloudflare & Rumahweb', 'Domain Portfolio & Tunnel', 'daerobii0223@gmail.com', 'https://dash.cloudflare.com', 'Cloudflare Zero Trust Tunnel', 'Internal Agency daerobi-devs', 150000, '2027-06-10', 'Active', 'Domain utama portofolio agency & webhook bot'],
+    ['dom-4', 'daerobi-devs.my.id', 'Cloudflare & Rumahweb', 'Domain Portfolio & Tunnel', 'admin@daerobi-devs.my.id', 'https://dash.cloudflare.com', 'Cloudflare Zero Trust Tunnel', 'Internal Agency daerobi-devs', 150000, '2027-06-10', 'Active', 'Domain utama portofolio agency & webhook bot'],
   ];
   for (const h of hostSeed) insHost.run(...h);
 }
@@ -701,7 +701,7 @@ function seedProjectVaultAndBuatin(db) {
       'buatin.biz.id',
       'Rumahweb & Cloudflare',
       'Website Resmi Agency BUATIN',
-      'daerobii0223@gmail.com',
+      'admin@buatin.biz.id',
       'https://clientzone.rumahweb.com',
       'Cloudflare DNS -> Coolify Home Server',
       'BUATIN Tech & Website Creation (Daerobi)',
@@ -1805,7 +1805,7 @@ export function createHostingDomain(db, input) {
     input.domain_or_service.trim(),
     input.provider || 'Rumahweb',
     input.category || 'Domain & Hosting',
-    input.account_identity || 'daerobii0223@gmail.com',
+    input.account_identity || 'admin@daerobi-devs.my.id',
     input.panel_url || 'https://clientzone.rumahweb.com',
     input.ip_or_dns || 'DNS Provider',
     input.client_owner || 'Internal / Klien',
